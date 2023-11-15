@@ -8,3 +8,8 @@ WORKDIR /app
 # Install packages
 COPY requirements.txt .
 RUN pip install -r requirements.txt
+
+# Install utils as a package in editable mode
+COPY setup.py .
+COPY utils ./utils
+RUN pip install -e .

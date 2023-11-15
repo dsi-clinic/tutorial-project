@@ -36,7 +36,7 @@ def geocode_address(
         + " "
         + zip
         + ".json?access_token="
-        + os.getenv("MAPBOX_ACCESS_TOKEN")
+        + os.getenv("MAPBOX_TOKEN")
     )
     try:
         r = requests.get(url)
