@@ -8,11 +8,11 @@ This project involves geocoding addresses from an Excel file that contains Food 
 
 To geocode our addresses, we will use a Jupyter notebook that is running in a Docker container.
 
-1. **Mapbox API Key**: We need a `.env` file located in the root of our directory that includes a `MAPBOX_TOKEN` variable. If you don't already have a Mapbox API key, sign up for a free account at https://account.mapbox.com and get your token.
+1. **Mapbox API Key**: We need a `.env` file located in the root of our directory that includes a `MAPBOX_TOKEN` variable. If you don't already have a Mapbox API key, sign up for a free account at https://account.mapbox.com. Once you're logged in, copy your defaault public access token into the `.env` file (e.g., `MAPBOX_TOKEN=pk.<...>`). (_Note: To avoid a [current Docker bug](https://stackoverflow.com/questions/30494050/how-do-i-pass-environment-variables-to-docker-containers/75237297#75237297), no quotation marks should be used around the token value._)
 
 1. **FSIS Data**: The script expects there to be a file called `MPI_Directory_by_Establishment_Number.xlsx` located in a `data/raw/` folder in the root of the directory. You can [download the example data from Google Drive here](https://docs.google.com/spreadsheets/d/1swbQmuix-tCRBPK2wizncPLmrlWBgR-g/edit?usp=drive_link&ouid=114633865943391212776&rtpof=true&sd=true).
 
-1. **Build Docker Image**: Build the Docker image for this project by running `make build`
+1. **Build Docker Image**: Build the Docker image for this project by running `make build`.
 
 1. **Start a Docker Container with a Jupyter Server**: Run `make jupyter`.
 
@@ -46,12 +46,10 @@ When dealing with both scripts and notebooks, it can be difficult to properly im
 
 A common solution you'll find online is to do hacky things to append different folders to your [PATH](https://askubuntu.com/questions/551990/what-does-path-mean).
 
-This is fine for a quick work around to test things out, but a better solution is to install your scripts as a package so you can import it like this: `from scripts import good_function`
+This is fine for a quick workaround to test things out, but a better solution is to install your scripts as a package so you can import it like this: `from scripts import good_function`
 
 ### .gitignore
 
 In general, we want to avoid committing data files to Git repos. We also want to avoid committing sensitive information like API keys or random system files like `.DS_Store`. The `.gitignore` file is a list of files and directories that Git will, you guessed it, _ignore_.
 
 In this project, we've ignored the entire `data` folder as well as our `.env` file. Since we are ignoring our `.env` file and our `data` folder, we should make sure that the README tells users what files they will manually need to add to their directory to run our code.
-
-\*scrolls up a few sections\* Ok, looks good.
