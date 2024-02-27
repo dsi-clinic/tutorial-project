@@ -2,7 +2,11 @@
 
 This is the cleaned up version of a tutorial project.
 
-This project involves geocoding addresses from an Excel file that contains Food Safety and Inspection (FSIS) data for poultry processing plants using the Mapbox API.
+## Running the Pipeline
+
+Create a folder called `data` under the root of the repository if it doesn't exist. Then create a sub-folder called `boundaries`, download the [following four files](https://drive.google.com/drive/folders/1j8tlEr6ygnI50z86pxZJI_HmHgvzeJ2N?usp=sharing), and save them underneath.
+
+We will talk through the pipeline setup during the remainder of the workshop.
 
 ## Running the Geocoding Notebook
 

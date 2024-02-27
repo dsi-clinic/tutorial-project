@@ -1,11 +1,11 @@
-"""Installs the geocoding application as a package.
+"""Installs the pipeline as a package.
 """
 
 from setuptools import find_packages, setup
 
 setup(
-    name="utils",
+    name="pipeline",
     version="0.1.0",
-    packages=find_packages(include=["utils"]),
+    packages=find_packages(include=["pipeline", "pipeline.*"]),
     install_requires=[],
 )

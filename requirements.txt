@@ -1,3 +1,6 @@
+matplotlib
 pandas
+geopandas
 requests
+shapely
 openpyxl
