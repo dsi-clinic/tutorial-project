@@ -48,7 +48,7 @@ def main() -> None:
 
     # Plot geographies and save result to output file
     gdf.plot(facecolor="none")
-    os.makedirs("../data/outputs", exist_ok=True)
+    os.makedirs("../data/outputs", exist_ok=True)  # TODO: column parameter not working?
     plt.savefig("../data/outputs/galveston.jpg")
 
 
